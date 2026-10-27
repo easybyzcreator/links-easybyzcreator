@@ -1,0 +1,6 @@
+{
+  "name": "EasyByz Creator - Link na Bio",
+  "description": "Hub oficial de links e vitrine de aplicativos personalizados da Easy Byz Creator com simuladores interativos e diagnóstico gratuito.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
