@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Instagram, Facebook, Globe, Share2, Check, Sparkles, MessageCircle } from 'lucide-react';
+import { Instagram, Facebook, Globe, Share2, Check, MessageCircle } from 'lucide-react';
 import { BRAND_INFO } from '../data/content';
 
 interface HeaderProps {
@@ -31,7 +31,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAbout }) => {
   return (
     <header className="relative flex flex-col items-center text-center pt-6 pb-6 px-4">
       {/* Top Left Tag: Sobre nós */}
-      <div className="w-full flex items-center justify-between mb-4">
+      <div className="w-full flex items-center justify-start mb-4">
         {onOpenAbout ? (
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -43,14 +43,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAbout }) => {
             <span className="font-semibold text-[11px]">Sobre nós</span>
           </motion.button>
         ) : <div />}
-
-        <div className="flex items-center gap-1 text-[10px] font-mono text-[#9ca3af] bg-white/[0.03] px-2.5 py-1 rounded-full border border-white/5">
-          <Sparkles className="w-3 h-3 text-[#00f0ff]" />
-          <span>EBC Oficial</span>
-        </div>
       </div>
 
-      {/* Brand Avatar / Logo - Increased by 40% without sparkle badge */}
+      {/* Brand Avatar / Logo - Increased by 35% */}
       <motion.div
         initial={{ scale: 0.85, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -59,8 +54,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAbout }) => {
       >
         <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-[#00f0ff] via-[#00ddff] to-[#38bdf8] opacity-75 blur-lg group-hover:opacity-100 transition duration-500" />
         
-        {/* Dark Circle Container (matches brand dark blue/black theme, +40% size) */}
-        <div className="relative w-[135px] h-[135px] sm:w-[158px] sm:h-[158px] rounded-full bg-[#030303] p-1 border-2 border-[#00f0ff]/50 shadow-2xl flex items-center justify-center overflow-hidden">
+        {/* Dark Circle Container */}
+        <div className="relative w-[182px] h-[182px] sm:w-[214px] sm:h-[214px] rounded-full bg-[#030303] p-1 border-2 border-[#00f0ff]/50 shadow-2xl flex items-center justify-center overflow-hidden">
           <img
             src={BRAND_INFO.logoUrl}
             alt="Easy Byz Creator Logo"
@@ -75,7 +70,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAbout }) => {
         initial={{ y: 12, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.1, duration: 0.4 }}
-        className="mt-4 max-w-sm"
+        className="mt-10 max-w-sm"
       >
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.05] border border-[#00f0ff]/30 text-[#00f0ff] text-[11px] font-mono font-medium tracking-wider uppercase mb-2">
           <span>Soluções Digitais & Apps</span>
@@ -85,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAbout }) => {
           EASY BYZ <span className="text-[#00f0ff]">CREATOR</span>
         </h1>
         
-        <p className="text-[#e2e8f0] text-sm mt-1.5 font-medium leading-relaxed">
+        <p className="text-[#e2e8f0] text-sm mt-9 font-medium leading-relaxed">
           {BRAND_INFO.tagline}
         </p>
         <p className="text-[#9ca3af] text-xs mt-1 leading-snug">

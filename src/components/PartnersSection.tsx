@@ -67,6 +67,8 @@ export const PartnersSection: React.FC = () => {
                     ? 'scale-110'
                     : partner.id === 'fabrine-fernandes'
                     ? 'scale-110'
+                    : partner.id === 'biizhub'
+                    ? 'scale-100'
                     : 'scale-105'
                 }`}
               />
